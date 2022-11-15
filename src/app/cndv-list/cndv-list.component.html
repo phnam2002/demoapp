@@ -1,0 +1,56 @@
+<div class="card my-5">
+  <form class="form-inline my-2 my-lg-0" style= "margin-left :6px">
+    <input type="search" id="mySearch" name="ma"  #ma="ngModel" ngModel style= "margin-right :15px ; width : 80px" placeholder="Mã"/>
+    <input type="search" id="mySearch1" name="tenNgan"  #tenNgan="ngModel" ngModel style= "margin-right :8px ; width : 200px" placeholder="Tên Ngắn"/>
+    <input type="search" id="mySearch2" name="diaChiCn"  #diaChiCn="ngModel" ngModel style= "margin-right :33px" placeholder="Địa chỉ CN"/>
+    <input type="search" id="mySearch4" name="tenDayDu"  #tenDayDu="ngModel" ngModel  style= "margin-right :52px" placeholder="Tên Đầy Đủ"/>
+    <button (click)= "searchCndvs(ma.value , tenNgan.value, diaChiCn.value,tenDayDu.value)" style="font-size: 20px;">Search</button>
+ </form>
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Mã</th>
+            <th scope="col">Tên Ngắn</th>
+            <th scope="col">Địa chỉ CN</th>
+            <th scope="col">Tên Đầy Đủ</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cndv of cndvs">
+            <td>{{ cndv.id }}</td>
+            <td>{{ cndv.ma }}</td>
+            <td>{{ cndv.tenNgan }}</td>
+            <td>{{ cndv.diaChiCn }}</td>
+            <td>{{ cndv.tenDayDu }}</td>
+            <td>
+                <button (click)= "updateCndv(cndv.id)" class = "btn btn-info" > Update </button>
+                <button (click)= "deleteCndv(cndv.id)" class = "btn btn-danger" style= "margin-left :10px"> Delete </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--    phân trang-->
+  <div class="mt-3">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination d-flex justify-content-md-end justify-content-center">
+        <li class="page-item"><a class="page-link" (click)="firtPage()">Đầu</a></li>
+        <li class="page-item"><a class="page-link" (click)="prviousPage()">Trang trước</a></li>
+        <li class="page-item"><a class="page-link" (click)="nextPage()">Trang kế</a></li>
+        <li class="page-item col-md-1 col-2  px-0">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon2">{{indexPagination  + 1}}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  

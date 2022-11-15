@@ -1,0 +1,34 @@
+<h3> UpdateCndv</h3>
+<form (ngSubmit) ="onSubmit()">
+
+    <div class="form-group">
+        <label >Id</label>
+        <input type="text" class="form-control" id="id"
+            [(ngModel)] = "cndv.id" name = "id">
+    </div>
+
+    <div class="form-group">
+        <label >Mã</label>
+        <input type="text" class="form-control" id="ma"
+            [(ngModel)] = "cndv.ma" name = "ma">
+    </div>
+    
+    <div class="form-group">
+        <label >Tên Ngắn</label>
+        <input type="text" class="form-control" id="tenNgan"
+            [(ngModel)] = "cndv.tenNgan" name = "tenNgan">
+    </div>
+
+    <div class="form-group">
+        <label >Địa chỉ CN</label>
+        <input type="text" class="form-control" id="diaChiCn"
+            [(ngModel)] = "cndv.diaChiCn" name = "diaChiCn">
+    </div>
+    
+    <div class="form-group">
+        <label >Tên Đầy Đủ</label>
+        <input type="text" class="form-control" id="tenDayDu"
+            [(ngModel)] = "cndv.tenDayDu" name = "tenDayDu">
+    </div>
+    <button class="btn btn-success" type="submit">Submit</button>
+</form>
