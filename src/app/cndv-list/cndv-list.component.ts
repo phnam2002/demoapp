@@ -42,7 +42,7 @@ export class CndvListComponent implements OnInit {
     });
   }
 
-  firtPage() {
+  firstPage() {
     this.indexPagination = 0;
     this.ngOnInit();
   }
@@ -57,7 +57,7 @@ export class CndvListComponent implements OnInit {
     })
   }
 
-  prviousPage() {
+  previousPage() {
     this.indexPagination = this.indexPagination - 1;
     if (this.indexPagination == 0) {
       this.ngOnInit();
